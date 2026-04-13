@@ -19,7 +19,7 @@ export default function Navbar() {
     profile?.role === 'SELLER' ? '/seller/dashboard'
     : profile?.role === 'BUYER' ? '/buyer/dashboard'
     : profile?.role === 'ADMIN' ? '/admin/dashboard'
-    : null;
+    : '/home';
 
   const isActive = (path: string) => location.pathname === path;
 
