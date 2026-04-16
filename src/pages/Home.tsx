@@ -13,7 +13,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const load = async () => {
+    const load = async (): Promise<void> => {
+      try{
       const [productsRes, categoriesRes, sellersRes, buyersRes, prodCountRes] = await Promise.all([
         supabase.from('products').select('*, seller:profiles(id,full_name,email), category:categories(id,name), reviews(id,rating)').eq('status', 'APPROVED').order('created_at', { ascending: false }).limit(6),
         supabase.from('categories').select('*').limit(6),
@@ -29,6 +30,10 @@ export default function Home() {
         products: prodCountRes.count ?? 0,
       });
       setLoading(false);
+    }catch(error){
+      console.error('Error loading home data:',error);
+       setLoading (false);
+    }
     };
     load();
   }, []);
