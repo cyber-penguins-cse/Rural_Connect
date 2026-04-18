@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-stone-200 mt-8 pt-6 flex items-center justify-between flex-wrap gap-3">
           <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} RuralConnect. All rights reserved.</p>
-          <p className="text-xs text-gray-400 flex items-center gap-1">Made with <Heart className="w-3 h-3 text-red-400 fill-red-400" /> for rural communities</p>
+          <p className="text-xs text-gray-400 flex items-center gap-1">Made By Cyber Penguins <Heart className="w-3 h-3 text-red-400 fill-red-400" /> for rural communities</p>
         </div>
       </div>
     </footer>
