@@ -235,3 +235,42 @@ CREATE POLICY "Buyers can create reviews"
     auth.uid() = buyer_id AND
     EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'BUYER')
   );
+
+-- =========================================
+-- Utility: automatically refresh updated_at
+-- =========================================
+
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = now();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Products updated_at trigger
+DROP TRIGGER IF EXISTS trg_products_updated_at ON products;
+
+CREATE TRIGGER trg_products_updated_at
+BEFORE UPDATE ON products
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
+
+-- Enquiries updated_at trigger
+DROP TRIGGER IF EXISTS trg_enquiries_updated_at ON enquiries;
+
+CREATE TRIGGER trg_enquiries_updated_at
+BEFORE UPDATE ON enquiries
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
+
+-- =========================================
+-- Validation: prevent invalid product price
+-- =========================================
+
+ALTER TABLE products
+DROP CONSTRAINT IF EXISTS products_price_positive;
+
+ALTER TABLE products
+ADD CONSTRAINT products_price_positive
+CHECK (price > 0);
