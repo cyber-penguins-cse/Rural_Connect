@@ -1,5 +1,5 @@
 # Server
-server.port=8080
+#server.port=8080
 
 # MySQL Database
 spring.datasource.url=jdbc:mysql://localhost:3306/ruralconnect?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
