@@ -109,35 +109,35 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex items-center justify-between mb-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Shop by Category</h2>
-            <p className="text-gray-500 text-sm mt-1">Explore our curated rural product categories</p>
+            <p className="text-gray-500 text-sm mt-2">Explore our curated rural product categories</p>
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5">
           {categories.map((cat) => (
             <Link
               key={cat.id}
               to={`/products?category=${cat.id}`}
-              className="flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group"
+              className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-stone-200 hover:border-purple-400 hover:shadow-lg hover:bg-purple-50 transition-all duration-300 group"
             >
-              <span className="text-3xl group-hover:scale-110 transition-transform">{categoryIcons[cat.name] ?? '🌿'}</span>
-              <span className="text-xs font-semibold text-gray-700 text-center leading-tight">{cat.name}</span>
+              <span className="text-4xl group-hover:scale-125 transition-transform duration-300">{categoryIcons[cat.name] ?? '🌿'}</span>
+              <span className="text-sm font-semibold text-gray-700 text-center leading-tight">{cat.name}</span>
             </Link>
           ))}
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="flex items-center justify-between mb-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Featured Products</h2>
-            <p className="text-gray-500 text-sm mt-1">Handpicked from our finest rural makers</p>
+            <p className="text-gray-500 text-sm mt-2">Handpicked from our finest rural makers</p>
           </div>
-          <Link to="/products" className="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-1">
+          <Link to="/products" className="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-1 transition-colors duration-200">
             View all <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -149,17 +149,17 @@ export default function Home() {
             <p className="text-sm">No products yet. Be the first to list!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-7">
             {featuredProducts.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
         )}
       </section>
 
       {/* How It Works */}
-      <section className="bg-purple-900 text-white py-16">
+      <section className="bg-purple-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold mb-2">How RuralConnect Works</h2>
+          <div className="text-center mb-14">
+            <h2 className="text-2xl font-bold mb-3">How RuralConnect Works</h2>
             <p className="text-purple-300 text-sm">Simple, transparent, and community-first</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -182,14 +182,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to join RuralConnect?</h2>
-        <p className="text-gray-500 mb-8 max-w-md mx-auto">Join thousands of rural makers and buyers creating a better rural economy.</p>
-        <div className="flex justify-center gap-4">
-          <Link to="/register" className="px-6 py-3.5 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-5">Ready to join RuralConnect?</h2>
+        <p className="text-gray-500 mb-10 max-w-md mx-auto">Join thousands of rural makers and buyers creating a better rural economy.</p>
+        <div className="flex justify-center gap-5">
+          <Link to="/register" className="px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all duration-300 shadow-lg shadow-purple-200 hover:shadow-xl hover:shadow-purple-300 hover:-translate-y-0.5">
             Create Free Account
           </Link>
-          <Link to="/products" className="px-6 py-3.5 border border-stone-300 text-gray-700 font-semibold rounded-xl hover:bg-stone-100 transition-colors">
+          <Link to="/products" className="px-8 py-4 border border-stone-300 text-gray-700 font-semibold rounded-xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300">
             Explore Products
           </Link>
         </div>
