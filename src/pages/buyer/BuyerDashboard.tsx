@@ -80,7 +80,7 @@ export default function BuyerDashboard() {
         {[
           { label: 'Total Enquiries', value: stats.total, icon: MessageSquare, color: 'text-blue-600 bg-blue-50' },
           { label: 'Pending', value: stats.pending, icon: Clock, color: 'text-amber-600 bg-amber-50' },
-          { label: 'Accepted', value: stats.accepted, icon: CheckCircle, color: 'text-green-600 bg-green-50' },
+          { label: 'Accepted', value: stats.accepted, icon: CheckCircle, color: 'text-purple-600 bg-purple-50' },
           { label: 'Completed', value: stats.completed, icon: Star, color: 'text-emerald-600 bg-emerald-50' },
         ].map(({ label, value, icon: Icon, color }) => (
           <div key={label} className="bg-white border border-stone-200 rounded-xl p-4">
@@ -95,7 +95,7 @@ export default function BuyerDashboard() {
 
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">My Enquiries</h2>
-        <Link to="/products" className="text-sm text-green-600 hover:text-green-700 font-medium flex items-center gap-1">
+        <Link to="/products" className="text-sm text-purple-600 hover:text-purple-700 font-medium flex items-center gap-1">
           <ShoppingBag className="w-4 h-4" /> Browse products
         </Link>
       </div>
@@ -105,7 +105,7 @@ export default function BuyerDashboard() {
           <div className="text-center py-16 bg-white border border-stone-200 rounded-2xl">
             <ShoppingBag className="w-10 h-10 text-stone-300 mx-auto mb-3" />
             <p className="text-gray-500 font-medium">No enquiries yet</p>
-            <Link to="/products" className="text-green-600 text-sm hover:underline mt-1 inline-block">Browse the marketplace</Link>
+            <Link to="/products" className="text-purple-600 text-sm hover:underline mt-1 inline-block">Browse the marketplace</Link>
           </div>
         ) : enquiries.map((e) => {
           const product = (e as unknown as { product: { id: string; title: string; image_url?: string; price: number } }).product;
@@ -118,7 +118,7 @@ export default function BuyerDashboard() {
                 </Link>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
-                    <Link to={`/products/${product?.id}`} className="font-semibold text-gray-900 text-sm hover:text-green-700">{product?.title}</Link>
+                    <Link to={`/products/${product?.id}`} className="font-semibold text-gray-900 text-sm hover:text-purple-700">{product?.title}</Link>
                     <StatusBadge status={e.status} />
                   </div>
                   <div className="text-xs text-gray-500 mb-2">Seller: {seller?.full_name}</div>
@@ -176,7 +176,7 @@ export default function BuyerDashboard() {
                   value={reviewForm.comment}
                   onChange={(e) => setReviewForm((f) => ({ ...f, comment: e.target.value }))}
                   rows={3}
-                  className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
                   placeholder="Share your experience..."
                 />
               </div>
@@ -184,7 +184,7 @@ export default function BuyerDashboard() {
                 <button type="button" onClick={() => setReviewModal(null)} className="flex-1 py-2.5 border border-stone-300 text-gray-700 font-medium rounded-xl text-sm hover:bg-stone-50">
                   Cancel
                 </button>
-                <button type="submit" disabled={reviewLoading} className="flex-1 py-2.5 bg-green-600 text-white font-semibold rounded-xl text-sm hover:bg-green-700 disabled:opacity-60">
+                <button type="submit" disabled={reviewLoading} className="flex-1 py-2.5 bg-purple-600 text-white font-semibold rounded-xl text-sm hover:bg-purple-700 disabled:opacity-60">
                   {reviewLoading ? 'Submitting...' : 'Submit Review'}
                 </button>
               </div>
@@ -195,3 +195,4 @@ export default function BuyerDashboard() {
     </div>
   );
 }
+

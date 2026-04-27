@@ -54,22 +54,22 @@ export default function AddProduct() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">Product Title *</label>
-            <input type="text" value={form.title} onChange={(e) => set('title', e.target.value)} required className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="e.g., Handwoven Bamboo Basket" />
+            <input type="text" value={form.title} onChange={(e) => set('title', e.target.value)} required className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="e.g., Handwoven Bamboo Basket" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">Description *</label>
-            <textarea value={form.description} onChange={(e) => set('description', e.target.value)} required rows={4} className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none" placeholder="Describe your product, materials used, dimensions, unique features..." />
+            <textarea value={form.description} onChange={(e) => set('description', e.target.value)} required rows={4} className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none" placeholder="Describe your product, materials used, dimensions, unique features..." />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Price (₹) *</label>
-              <input type="number" value={form.price} onChange={(e) => set('price', e.target.value)} required min="1" step="0.01" className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="0.00" />
+              <input type="number" value={form.price} onChange={(e) => set('price', e.target.value)} required min="1" step="0.01" className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="0.00" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Category</label>
-              <select value={form.category_id} onChange={(e) => set('category_id', e.target.value)} className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+              <select value={form.category_id} onChange={(e) => set('category_id', e.target.value)} className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white">
                 <option value="">Select category</option>
                 {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
@@ -78,7 +78,7 @@ export default function AddProduct() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">Image URL</label>
-            <input type="url" value={form.image_url} onChange={(e) => set('image_url', e.target.value)} className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="https://images.pexels.com/..." />
+            <input type="url" value={form.image_url} onChange={(e) => set('image_url', e.target.value)} className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="https://images.pexels.com/..." />
             {form.image_url && (
               <div className="mt-2 w-24 h-24 rounded-lg overflow-hidden border border-stone-200">
                 <img src={form.image_url} alt="Preview" className="w-full h-full object-cover" onError={(e) => (e.currentTarget.style.display = 'none')} />
@@ -92,7 +92,7 @@ export default function AddProduct() {
 
           <div className="flex gap-3 pt-2">
             <Link to="/seller/dashboard" className="flex-1 py-3 border border-stone-300 text-gray-700 font-semibold rounded-xl text-sm text-center hover:bg-stone-50 transition-colors">Cancel</Link>
-            <button type="submit" disabled={loading} className="flex-1 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl text-sm transition-colors disabled:opacity-60">
+            <button type="submit" disabled={loading} className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl text-sm transition-colors disabled:opacity-60">
               {loading ? 'Submitting...' : 'Submit for Review'}
             </button>
           </div>
@@ -101,3 +101,4 @@ export default function AddProduct() {
     </div>
   );
 }
+

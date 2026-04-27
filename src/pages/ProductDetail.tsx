@@ -56,7 +56,7 @@ export default function ProductDetail() {
     <div className="max-w-7xl mx-auto px-4 py-20 text-center">
       <Package className="w-12 h-12 text-stone-300 mx-auto mb-3" />
       <p className="text-gray-500">Product not found.</p>
-      <Link to="/products" className="text-green-600 text-sm hover:underline mt-2 inline-block">Back to marketplace</Link>
+      <Link to="/products" className="text-purple-600 text-sm hover:underline mt-2 inline-block">Back to marketplace</Link>
     </div>
   );
 
@@ -81,7 +81,7 @@ export default function ProductDetail() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             {product.category && (
-              <span className="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full">
+              <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full">
                 {product.category.name}
               </span>
             )}
@@ -105,7 +105,7 @@ export default function ProductDetail() {
 
           {product.seller && (
             <div className="flex items-center gap-3 p-4 bg-stone-50 rounded-xl mb-8 border border-stone-200">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center font-semibold text-green-700">
+              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center font-semibold text-purple-700">
                 {product.seller.full_name.charAt(0)}
               </div>
               <div>
@@ -121,12 +121,12 @@ export default function ProductDetail() {
           {profile?.role === 'BUYER' && product.status === 'APPROVED' && (
             <div className="bg-white border border-stone-200 rounded-2xl p-6">
               <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-green-600" />
+                <MessageSquare className="w-4 h-4 text-purple-600" />
                 Send Enquiry
               </h3>
 
               {enquirySuccess ? (
-                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-3 rounded-xl text-sm">
+                <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-3 rounded-xl text-sm">
                   <CheckCircle className="w-4 h-4" />
                   Enquiry sent! The seller will respond soon.
                 </div>
@@ -143,12 +143,12 @@ export default function ProductDetail() {
                     required
                     rows={4}
                     placeholder="Describe what you're looking for, quantity needed, customization requests..."
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
                   />
                   <button
                     type="submit"
                     disabled={enquiryLoading}
-                    className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-60"
+                    className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-60"
                   >
                     {enquiryLoading ? 'Sending...' : 'Send Enquiry'}
                   </button>
@@ -160,7 +160,7 @@ export default function ProductDetail() {
           {!user && product.status === 'APPROVED' && (
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center">
               <p className="text-amber-800 text-sm font-medium mb-3">Sign in as a buyer to enquire about this product</p>
-              <Link to="/login" className="inline-block px-5 py-2.5 bg-green-600 text-white text-sm font-semibold rounded-xl hover:bg-green-700 transition-colors">
+              <Link to="/login" className="inline-block px-5 py-2.5 bg-purple-600 text-white text-sm font-semibold rounded-xl hover:bg-purple-700 transition-colors">
                 Sign in
               </Link>
             </div>
@@ -192,3 +192,4 @@ export default function ProductDetail() {
     </div>
   );
 }
+

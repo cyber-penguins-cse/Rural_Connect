@@ -67,7 +67,7 @@ export default function Products() {
             placeholder="Search products..."
             defaultValue={search}
             onChange={(e) => setParam('search', e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-stone-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 bg-white"
+            className="w-full pl-10 pr-4 py-2.5 border border-stone-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white"
           />
         </div>
         <div className="relative">
@@ -75,7 +75,7 @@ export default function Products() {
           <select
             value={categoryId}
             onChange={(e) => setParam('category', e.target.value)}
-            className="pl-10 pr-8 py-2.5 border border-stone-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 bg-white appearance-none cursor-pointer min-w-48"
+            className="pl-10 pr-8 py-2.5 border border-stone-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white appearance-none cursor-pointer min-w-48"
           >
             <option value="">All Categories</option>
             {categories.map((c) => (
@@ -89,7 +89,7 @@ export default function Products() {
       <div className="flex gap-2 flex-wrap mb-8">
         <button
           onClick={() => setParam('category', '')}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!categoryId ? 'bg-green-600 text-white' : 'bg-white border border-stone-200 text-gray-600 hover:border-green-300'}`}
+          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!categoryId ? 'bg-purple-600 text-white' : 'bg-white border border-stone-200 text-gray-600 hover:border-purple-300'}`}
         >
           All
         </button>
@@ -97,7 +97,7 @@ export default function Products() {
           <button
             key={c.id}
             onClick={() => setParam('category', c.id)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${categoryId === c.id ? 'bg-green-600 text-white' : 'bg-white border border-stone-200 text-gray-600 hover:border-green-300'}`}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${categoryId === c.id ? 'bg-purple-600 text-white' : 'bg-white border border-stone-200 text-gray-600 hover:border-purple-300'}`}
           >
             {c.name}
           </button>
@@ -131,7 +131,7 @@ export default function Products() {
                 <button
                   key={n}
                   onClick={() => { const p = new URLSearchParams(searchParams); p.set('page', String(n)); setSearchParams(p); }}
-                  className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${n === page ? 'bg-green-600 text-white' : 'border border-stone-200 text-gray-600 hover:bg-stone-100'}`}
+                  className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${n === page ? 'bg-purple-600 text-white' : 'border border-stone-200 text-gray-600 hover:bg-stone-100'}`}
                 >
                   {n}
                 </button>
@@ -150,3 +150,4 @@ export default function Products() {
     </div>
   );
 }
+

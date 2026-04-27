@@ -33,10 +33,10 @@ export default function Register() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
               <Sprout className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-gray-900">Rural<span className="text-green-600">Connect</span></span>
+            <span className="font-bold text-xl text-gray-900">Rural<span className="text-purple-600">Connect</span></span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Create your account</h1>
           <p className="text-gray-500 text-sm mt-1">Join our rural marketplace community</p>
@@ -65,11 +65,11 @@ export default function Register() {
                     onClick={() => setRole(val)}
                     className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left ${
                       role === val
-                        ? 'border-green-600 bg-green-50 text-green-700'
+                        ? 'border-purple-600 bg-purple-50 text-purple-700'
                         : 'border-stone-200 text-gray-600 hover:border-stone-300'
                     }`}
                   >
-                    <Icon className={`w-6 h-6 ${role === val ? 'text-green-600' : 'text-stone-400'}`} />
+                    <Icon className={`w-6 h-6 ${role === val ? 'text-purple-600' : 'text-stone-400'}`} />
                     <div>
                       <div className="font-semibold text-sm">{label}</div>
                       <div className="text-xs opacity-70">{sub}</div>
@@ -86,7 +86,7 @@ export default function Register() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 placeholder="Your full name"
               />
             </div>
@@ -98,7 +98,7 @@ export default function Register() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 placeholder="you@example.com"
               />
             </div>
@@ -112,7 +112,7 @@ export default function Register() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full px-4 py-2.5 pr-10 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 pr-10 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="Min. 6 characters"
                 />
                 <button type="button" onClick={() => setShowPw(!showPw)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -124,7 +124,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-60"
+              className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-60"
             >
               {loading ? 'Creating account...' : 'Create account'}
             </button>
@@ -133,9 +133,10 @@ export default function Register() {
 
         <p className="text-center text-sm text-gray-500 mt-6">
           Already have an account?{' '}
-          <Link to="/login" className="text-green-600 font-medium hover:text-green-700">Sign in</Link>
+          <Link to="/login" className="text-purple-600 font-medium hover:text-purple-700">Sign in</Link>
         </p>
       </div>
     </div>
   );
 }
+

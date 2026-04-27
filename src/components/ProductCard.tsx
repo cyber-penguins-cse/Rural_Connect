@@ -34,14 +34,14 @@ export default function ProductCard({ product, showStatus = false, actions }: Pr
 
       <div className="p-4 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-1">
-            <Link to={`/products/${product.id}`} className="font-semibold text-gray-900 hover:text-green-700 line-clamp-2 text-sm leading-snug flex-1">
+            <Link to={`/products/${product.id}`} className="font-semibold text-gray-900 hover:text-purple-700 line-clamp-2 text-sm leading-snug flex-1">
                 {formatText(product.title)}
             </Link>
             {showStatus && <StatusBadge status={product.status} />}
         </div>
 
         {product.category && (
-            <span className="text-xs text-green-600 font-medium mb-2">{product.category.name}</span>
+            <span className="text-xs text-purple-600 font-medium mb-2">{product.category.name}</span>
      )}
 
     <p className="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">
