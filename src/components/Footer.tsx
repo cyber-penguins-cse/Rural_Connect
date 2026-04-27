@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link to="/" className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 bg-green-600 rounded-xl flex items-center justify-center">
+              <div className="w-8 h-8 bg-purple-600 rounded-xl flex items-center justify-center">
                 <Sprout className="w-4 h-4 text-white" />
               </div>
-              <span className="font-bold text-lg text-gray-900">Rural<span className="text-green-600">Connect</span></span>
+              <span className="font-bold text-lg text-gray-900">Rural<span className="text-purple-600">Connect</span></span>
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
               Empowering rural artisans and makers by connecting them directly with buyers across the country.
@@ -22,7 +22,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[['Browse Products', '/products'], ['Sell Your Crafts', '/register'], ['How It Works', '/']].map(([label, href]) => (
                 <li key={label}>
-                  <Link to={href} className="text-sm text-gray-500 hover:text-green-600 transition-colors">{label}</Link>
+                  <Link to={href} className="text-sm text-gray-500 hover:text-purple-600 transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -32,7 +32,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[['Sign In', '/login'], ['Create Account', '/register']].map(([label, href]) => (
                 <li key={label}>
-                  <Link to={href} className="text-sm text-gray-500 hover:text-green-600 transition-colors">{label}</Link>
+                  <Link to={href} className="text-sm text-gray-500 hover:text-purple-600 transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -46,3 +46,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -4,7 +4,8 @@ export default function LoadingSpinner({ size = 'lg' }: { size?: 'sm' | 'md' | '
 
   return (
     <div className={wrappers[size]}>
-      <div className={`${sizes[size]} animate-spin rounded-full border-4 border-green-100 border-t-green-600 mx-auto`} />
+      <div className={`${sizes[size]} animate-spin rounded-full border-4 border-purple-100 border-t-purple-600 mx-auto`} />
     </div>
   );
 }
+

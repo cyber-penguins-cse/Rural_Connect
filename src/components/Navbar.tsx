@@ -28,17 +28,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 bg-green-600 rounded-xl flex items-center justify-center group-hover:bg-green-700 transition-colors">
+            <div className="w-9 h-9 bg-purple-600 rounded-xl flex items-center justify-center group-hover:bg-purple-700 transition-colors">
               <Sprout className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-gray-900">Rural<span className="text-green-600">Connect</span></span>
+            <span className="font-bold text-xl text-gray-900">Rural<span className="text-purple-600">Connect</span></span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
             <Link
               to="/products"
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                isActive('/products') ? 'bg-green-50 text-green-700' : 'text-gray-600 hover:text-gray-900 hover:bg-stone-100'
+                isActive('/products') ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:text-gray-900 hover:bg-stone-100'
               }`}
             >
               Marketplace
@@ -47,7 +47,7 @@ export default function Navbar() {
               <Link
                 to={dashboardPath}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
-                  location.pathname.startsWith(dashboardPath) ? 'bg-green-50 text-green-700' : 'text-gray-600 hover:text-gray-900 hover:bg-stone-100'
+                  location.pathname.startsWith(dashboardPath) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:text-gray-900 hover:bg-stone-100'
                 }`}
               >
                 <LayoutDashboard className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-stone-100 rounded-lg">
                   <UserCircle className="w-4 h-4 text-stone-500" />
                   <span className="text-sm text-stone-700 font-medium">{profile.full_name.split(' ')[0]}</span>
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">{profile.role}</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">{profile.role}</span>
                 </div>
                 <button
                   onClick={handleSignOut}
@@ -79,7 +79,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   to="/register"
-                  className="px-4 py-2 text-sm font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                  className="px-4 py-2 text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   Get started
                 </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
           ) : (
             <div className="pt-2 flex flex-col gap-2">
               <Link to="/login" onClick={() => setMobileOpen(false)} className="px-4 py-2.5 text-center text-sm font-medium border border-stone-200 rounded-lg text-gray-700 hover:bg-stone-50">Sign in</Link>
-              <Link to="/register" onClick={() => setMobileOpen(false)} className="px-4 py-2.5 text-center text-sm font-medium bg-green-600 text-white rounded-lg hover:bg-green-700">Get started</Link>
+              <Link to="/register" onClick={() => setMobileOpen(false)} className="px-4 py-2.5 text-center text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700">Get started</Link>
             </div>
           )}
         </div>
@@ -121,3 +121,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

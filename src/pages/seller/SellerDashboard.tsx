@@ -60,7 +60,7 @@ export default function SellerDashboard() {
           <h1 className="text-2xl font-bold text-gray-900">Seller Dashboard</h1>
           <p className="text-gray-500 text-sm mt-1">Welcome back, {profile?.full_name}</p>
         </div>
-        <Link to="/seller/products/new" className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-600 text-white text-sm font-semibold rounded-xl hover:bg-green-700 transition-colors">
+        <Link to="/seller/products/new" className="inline-flex items-center gap-2 px-4 py-2.5 bg-purple-600 text-white text-sm font-semibold rounded-xl hover:bg-purple-700 transition-colors">
           <Plus className="w-4 h-4" /> Add Product
         </Link>
       </div>
@@ -69,7 +69,7 @@ export default function SellerDashboard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {[
           { label: 'Total Products', value: stats.total, icon: Package, color: 'text-blue-600 bg-blue-50' },
-          { label: 'Approved', value: stats.approved, icon: CheckCircle, color: 'text-green-600 bg-green-50' },
+          { label: 'Approved', value: stats.approved, icon: CheckCircle, color: 'text-purple-600 bg-purple-50' },
           { label: 'Pending Review', value: stats.pending, icon: Clock, color: 'text-amber-600 bg-amber-50' },
           { label: 'New Enquiries', value: stats.enquiriesPending, icon: MessageSquare, color: 'text-orange-600 bg-orange-50' },
         ].map(({ label, value, icon: Icon, color }) => (
@@ -104,7 +104,7 @@ export default function SellerDashboard() {
             <div className="text-center py-16 bg-white border border-stone-200 rounded-2xl">
               <Package className="w-10 h-10 text-stone-300 mx-auto mb-3" />
               <p className="text-gray-500 font-medium">No products yet</p>
-              <Link to="/seller/products/new" className="text-green-600 text-sm hover:underline mt-1 inline-block">Add your first product</Link>
+              <Link to="/seller/products/new" className="text-purple-600 text-sm hover:underline mt-1 inline-block">Add your first product</Link>
             </div>
           ) : products.map((p) => (
             <div key={p.id} className="bg-white border border-stone-200 rounded-xl p-4 flex items-center gap-4">
@@ -116,7 +116,7 @@ export default function SellerDashboard() {
                   <span className="font-semibold text-gray-900 text-sm truncate">{p.title}</span>
                   <StatusBadge status={p.status} />
                 </div>
-                <div className="text-sm text-green-700 font-semibold mt-0.5">₹{Number(p.price).toLocaleString('en-IN')}</div>
+                <div className="text-sm text-purple-700 font-semibold mt-0.5">₹{Number(p.price).toLocaleString('en-IN')}</div>
                 {p.category && <div className="text-xs text-stone-400 mt-0.5">{p.category.name}</div>}
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
@@ -147,13 +147,13 @@ export default function SellerDashboard() {
                     <span className="font-semibold text-gray-900 text-sm">{(e as unknown as { buyer: { full_name: string } }).buyer?.full_name ?? 'Buyer'}</span>
                     <StatusBadge status={e.status} />
                   </div>
-                  <div className="text-xs text-green-600 font-medium mb-2">{(e as unknown as { product: { title: string } }).product?.title}</div>
+                  <div className="text-xs text-purple-600 font-medium mb-2">{(e as unknown as { product: { title: string } }).product?.title}</div>
                   <p className="text-sm text-gray-600 bg-stone-50 rounded-lg px-3 py-2 leading-relaxed">{e.message}</p>
                 </div>
                 <div className="flex flex-col gap-2 flex-shrink-0">
                   {e.status === 'PENDING' && (
                     <>
-                      <button onClick={() => handleEnquiryStatus(e.id, 'ACCEPTED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white text-xs font-medium rounded-lg hover:bg-green-700 transition-colors">
+                      <button onClick={() => handleEnquiryStatus(e.id, 'ACCEPTED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white text-xs font-medium rounded-lg hover:bg-purple-700 transition-colors">
                         <CheckCircle className="w-3.5 h-3.5" /> Accept
                       </button>
                       <button onClick={() => handleEnquiryStatus(e.id, 'REJECTED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-700 text-xs font-medium rounded-lg hover:bg-red-100 transition-colors border border-red-200">
@@ -175,3 +175,4 @@ export default function SellerDashboard() {
     </div>
   );
 }
+

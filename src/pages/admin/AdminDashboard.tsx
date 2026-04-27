@@ -56,7 +56,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {[
           { label: 'Pending Review', value: stats.pending, icon: Clock, color: 'text-amber-600 bg-amber-50', badge: stats.pending > 0 },
-          { label: 'Approved Listings', value: stats.approved, icon: Package, color: 'text-green-600 bg-green-50', badge: false },
+          { label: 'Approved Listings', value: stats.approved, icon: Package, color: 'text-purple-600 bg-purple-50', badge: false },
           { label: 'Total Users', value: stats.users, icon: Users, color: 'text-blue-600 bg-blue-50', badge: false },
           { label: 'Suspended', value: stats.suspended, icon: AlertTriangle, color: 'text-red-600 bg-red-50', badge: false },
         ].map(({ label, value, icon: Icon, color }) => (
@@ -94,7 +94,7 @@ export default function AdminDashboard() {
         <div className="space-y-3">
           {pendingProducts.length === 0 ? (
             <div className="text-center py-16 bg-white border border-stone-200 rounded-2xl">
-              <CheckCircle className="w-10 h-10 text-green-300 mx-auto mb-3" />
+              <CheckCircle className="w-10 h-10 text-purple-300 mx-auto mb-3" />
               <p className="text-gray-500 font-medium">All caught up! No pending products.</p>
             </div>
           ) : pendingProducts.map((p) => (
@@ -104,15 +104,15 @@ export default function AdminDashboard() {
               </Link>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <Link to={`/products/${p.id}`} className="font-semibold text-gray-900 text-sm hover:text-green-700">{p.title}</Link>
+                  <Link to={`/products/${p.id}`} className="font-semibold text-gray-900 text-sm hover:text-purple-700">{p.title}</Link>
                   <StatusBadge status={p.status} />
                 </div>
                 <div className="text-xs text-gray-500 mb-1">By {(p as unknown as { seller: { full_name: string } }).seller?.full_name}</div>
-                <div className="text-sm font-semibold text-green-700">₹{Number(p.price).toLocaleString('en-IN')}</div>
+                <div className="text-sm font-semibold text-purple-700">₹{Number(p.price).toLocaleString('en-IN')}</div>
                 <p className="text-xs text-gray-500 mt-1 line-clamp-2">{p.description}</p>
               </div>
               <div className="flex flex-col gap-2 flex-shrink-0">
-                <button onClick={() => handleProductStatus(p.id, 'APPROVED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white text-xs font-medium rounded-lg hover:bg-green-700 transition-colors">
+                <button onClick={() => handleProductStatus(p.id, 'APPROVED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white text-xs font-medium rounded-lg hover:bg-purple-700 transition-colors">
                   <CheckCircle className="w-3.5 h-3.5" /> Approve
                 </button>
                 <button onClick={() => handleProductStatus(p.id, 'REJECTED')} className="flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-700 text-xs font-medium rounded-lg hover:bg-red-100 transition-colors border border-red-200">
@@ -140,7 +140,7 @@ export default function AdminDashboard() {
               {products.map((p) => (
                 <tr key={p.id} className="hover:bg-stone-50 transition-colors">
                   <td className="px-4 py-3">
-                    <Link to={`/products/${p.id}`} className="font-medium text-gray-900 hover:text-green-700 line-clamp-1">{p.title}</Link>
+                    <Link to={`/products/${p.id}`} className="font-medium text-gray-900 hover:text-purple-700 line-clamp-1">{p.title}</Link>
                   </td>
                   <td className="px-4 py-3 text-gray-500">{(p as unknown as { seller: { full_name: string } }).seller?.full_name}</td>
                   <td className="px-4 py-3 font-semibold text-gray-900">₹{Number(p.price).toLocaleString('en-IN')}</td>
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
                   <td className="px-4 py-3">
                     <div className="flex gap-1">
                       {p.status !== 'APPROVED' && (
-                        <button onClick={() => handleProductStatus(p.id, 'APPROVED')} className="px-2 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-lg hover:bg-green-100 transition-colors">Approve</button>
+                        <button onClick={() => handleProductStatus(p.id, 'APPROVED')} className="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-lg hover:bg-purple-100 transition-colors">Approve</button>
                       )}
                       {p.status !== 'REJECTED' && (
                         <button onClick={() => handleProductStatus(p.id, 'REJECTED')} className="px-2 py-1 bg-red-50 text-red-700 text-xs font-medium rounded-lg hover:bg-red-100 transition-colors">Reject</button>
@@ -181,7 +181,7 @@ export default function AdminDashboard() {
                   <td className="px-4 py-3 text-gray-500">{u.email}</td>
                   <td className="px-4 py-3">
                     <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
-                      u.role === 'ADMIN' ? 'bg-blue-50 text-blue-700' : u.role === 'SELLER' ? 'bg-green-50 text-green-700' : 'bg-stone-100 text-stone-600'
+                      u.role === 'ADMIN' ? 'bg-blue-50 text-blue-700' : u.role === 'SELLER' ? 'bg-purple-50 text-purple-700' : 'bg-stone-100 text-stone-600'
                     }`}>{u.role}</span>
                   </td>
                   <td className="px-4 py-3">
@@ -195,7 +195,7 @@ export default function AdminDashboard() {
                         onClick={() => handleSuspend(u.id, !u.is_suspended)}
                         className={`flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-lg transition-colors ${
                           u.is_suspended
-                            ? 'bg-green-50 text-green-700 hover:bg-green-100'
+                            ? 'bg-purple-50 text-purple-700 hover:bg-purple-100'
                             : 'bg-red-50 text-red-700 hover:bg-red-100'
                         }`}
                       >
@@ -212,3 +212,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+
