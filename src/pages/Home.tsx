@@ -50,33 +50,33 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #c4b5fd 0%, transparent 60%), radial-gradient(circle at 80% 20%, #7c3aed 0%, transparent 40%)' }} />
+      <section className="relative bg-gradient-to-br from-[#e6f7e6] via-[#ccedcc] to-[#b3e2b3] text-[#064d06] overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0,128,0,0.16) 0%, transparent 55%), radial-gradient(circle at 85% 25%, rgba(0,128,0,0.2) 0%, transparent 45%)' }} />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-purple-100 mb-6 border border-white/20">
-              <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full text-sm font-medium text-[#006600] mb-6 border border-[#c0e0c0] shadow-sm">
+              <span className="w-2 h-2 bg-[#008000] rounded-full animate-pulse" />
               Sri Lanka's Rural Marketplace
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               Discover Authentic<br />
-              <span className="text-amber-400">Rural Craftsmanship</span>
+              <span className="text-[#008000]">Rural Craftsmanship</span>
             </h1>
-            <p className="text-lg text-purple-100 mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg text-[#064d06] mb-10 max-w-xl leading-relaxed">
               Connect directly with rural artisans and makers. Buy unique handcrafted products, support local communities, and celebrate Sri Lanka's rich heritage.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-amber-900/20"
+                className="inline-flex items-center gap-2 bg-[#008000] hover:bg-[#006600] text-white font-semibold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#008000]/20"
               >
                 Browse Marketplace <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/register"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors backdrop-blur-sm"
+                className="inline-flex items-center gap-2 bg-white text-[#006600] hover:bg-[#f0fff0] border border-[#008000] font-semibold px-6 py-3.5 rounded-xl transition-colors"
               >
                 Start Selling
               </Link>
@@ -90,9 +90,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-3 gap-6">
             {[
-              { icon: Package, label: 'Products Listed', value: stats.products, color: 'text-purple-600 bg-purple-50' },
-              { icon: Users, label: 'Active Sellers', value: stats.sellers, color: 'text-amber-600 bg-amber-50' },
-              { icon: TrendingUp, label: 'Happy Buyers', value: stats.buyers, color: 'text-blue-600 bg-blue-50' },
+              { icon: Package, label: 'Products Listed', value: stats.products, color: 'text-[#006600] bg-[#e6ffe6]' },
+              { icon: Users, label: 'Active Sellers', value: stats.sellers, color: 'text-[#006600] bg-[#e6ffe6]' },
+              { icon: TrendingUp, label: 'Happy Buyers', value: stats.buyers, color: 'text-[#006600] bg-[#e6ffe6]' },
             ].map(({ icon: Icon, label, value, color }) => (
               <div key={label} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-xl hover:bg-stone-50 transition-colors">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${color}`}>
@@ -121,7 +121,7 @@ export default function Home() {
             <Link
               key={cat.id}
               to={`/products?category=${cat.id}`}
-              className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-stone-200 hover:border-purple-400 hover:shadow-lg hover:bg-purple-50 transition-all duration-300 group"
+              className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-stone-200 hover:border-[#008000] hover:shadow-lg hover:bg-[#f0fff0] transition-all duration-300 group"
             >
               <span className="text-4xl group-hover:scale-125 transition-transform duration-300">{categoryIcons[cat.name] ?? '🌿'}</span>
               <span className="text-sm font-semibold text-gray-700 text-center leading-tight">{cat.name}</span>
@@ -137,7 +137,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-gray-900">Featured Products</h2>
             <p className="text-gray-500 text-sm mt-2">Handpicked from our finest rural makers</p>
           </div>
-          <Link to="/products" className="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-1 transition-colors duration-200">
+          <Link to="/products" className="text-sm font-medium text-[#008000] hover:text-[#006600] flex items-center gap-1 transition-colors duration-200">
             View all <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -156,11 +156,11 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-purple-900 text-white py-20">
+      <section className="bg-[#f0fff0] text-[#053805] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-2xl font-bold mb-3">How RuralConnect Works</h2>
-            <p className="text-purple-300 text-sm">Simple, transparent, and community-first</p>
+            <p className="text-[#006600] text-sm">Simple, transparent, and community-first</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -168,13 +168,13 @@ export default function Home() {
               { icon: Truck, step: '02', title: 'Direct Enquiry', desc: 'Buyers send enquiries directly to sellers. Negotiate and close deals seamlessly.' },
               { icon: Star, step: '03', title: 'Review & Rate', desc: 'After every completed deal, buyers can leave honest reviews to build trust.' },
             ].map(({ icon: Icon, step, title, desc }) => (
-              <div key={step} className="relative p-6 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm">
-                <div className="text-5xl font-black text-white/10 absolute top-4 right-4">{step}</div>
-                <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center mb-4">
+              <div key={step} className="relative p-6 bg-white rounded-2xl border border-[#c7e7c7] shadow-sm">
+                <div className="text-5xl font-black text-[#c7e7c7] absolute top-4 right-4">{step}</div>
+                <div className="w-12 h-12 bg-[#008000] rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{title}</h3>
-                <p className="text-purple-200 text-sm leading-relaxed">{desc}</p>
+                <p className="text-[#006600] text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -186,10 +186,10 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-gray-900 mb-5">Ready to join RuralConnect?</h2>
         <p className="text-gray-500 mb-10 max-w-md mx-auto">Join thousands of rural makers and buyers creating a better rural economy.</p>
         <div className="flex justify-center gap-5">
-          <Link to="/register" className="px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all duration-300 shadow-lg shadow-purple-200 hover:shadow-xl hover:shadow-purple-300 hover:-translate-y-0.5">
+          <Link to="/register" className="px-8 py-4 bg-[#008000] text-white font-semibold rounded-xl hover:bg-[#006600] transition-all duration-300 shadow-lg shadow-[#008000]/30 hover:shadow-xl hover:shadow-[#008000]/40 hover:-translate-y-0.5">
             Create Free Account
           </Link>
-          <Link to="/products" className="px-8 py-4 border border-stone-300 text-gray-700 font-semibold rounded-xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300">
+          <Link to="/products" className="px-8 py-4 border border-[#008000] text-[#006600] font-semibold rounded-xl hover:bg-[#f0fff0] hover:border-[#008000] transition-all duration-300">
             Explore Products
           </Link>
         </div>
