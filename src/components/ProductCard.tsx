@@ -48,7 +48,7 @@ export default function ProductCard({ product, showStatus = false, actions }: Pr
         <p className="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed group-hover:text-gray-600 smooth-transition">{product.description}</p>
 
         <div className="mt-auto flex items-center justify-between">
-          <span className="text-lg font-bold text-gray-900 group-hover:text-green-600 smooth-transition">₹{Number(product.price).toLocaleString('en-IN')}</span>
+          <span className="text-lg font-bold text-gray-900 group-hover:text-green-600 smooth-transition">Rs. {Number(product.price).toLocaleString('en-LK')}</span>          
           <div className="flex flex-col items-end gap-1">
             {avgRating && (
               <div className="flex items-center gap-1 group-hover:scale-110 smooth-transition origin-right">
