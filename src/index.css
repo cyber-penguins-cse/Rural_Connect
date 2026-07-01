@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes loading-bar {
+    0% {
+      width: 0;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(5, 150, 105, 1);
+    }
+    100% {
+      width: 100%;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+  }
+
+  @keyframes product-hover {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.12) rotate(1.5deg);
+    }
+    100% {
+      transform: scale(1.12) rotate(-0.5deg);
+    }
+  }
+
+  @keyframes color-overlay-pulse {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.15;
+    }
+  }
+
+  @keyframes button-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  @keyframes sway {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(2deg);
+    }
+  }
+
+  @keyframes float-sway {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes parallax-depth {
+    0% {
+      transform: translateZ(0) perspective(1200px) rotateX(0deg);
+    }
+    50% {
+      transform: translateZ(20px) perspective(1200px) rotateX(-2deg);
+    }
+    100% {
+      transform: translateZ(0) perspective(1200px) rotateX(0deg);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      box-shadow: -1000px 0 0 -900px rgba(255, 213, 0, 0.8);
+    }
+    100% {
+      box-shadow: 1000px 0 0 -900px transparent;
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-loading-bar {
+    animation: loading-bar 2.5s ease-in-out infinite;
+  }
+
+  .product-image-hover {
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .product-image-hover:hover {
+    animation: product-hover 0.8s ease-in-out forwards;
+  }
+
+  .product-overlay {
+    transition: opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  .product-image-hover:hover ~ .product-overlay,
+  .product-card:hover .product-overlay {
+    animation: color-overlay-pulse 0.8s ease-in-out;
+  }
+
+  .btn-premium {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-premium:hover {
+    animation: button-bounce 0.6s ease-in-out;
+    filter: brightness(1.15) drop-shadow(0 8px 20px rgba(16, 185, 129, 0.4));
+  }
+
+  .btn-premium:active {
+    transform: scale(0.95);
+  }
+
+  .floating-icon {
+    animation: sway 4s ease-in-out infinite;
+  }
+
+  .floating-icon:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .floating-icon:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  .floating-icon:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+
+  .floating-icon:nth-child(5) {
+    animation-delay: 2s;
+  }
+
+  .floating-icon:nth-child(6) {
+    animation-delay: 2.5s;
+  }
+
+  .hero-parallax {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer {
+    transform: translateZ(var(--depth, 0));
+    transition: transform 0.4s ease;
+  }
+
+  .btn-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .card-lift {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    transition: text-shadow 0.3s ease;
+  }
+
+  .text-glow:hover {
+    text-shadow: 0 0 20px rgba(5, 150, 105, 0.6);
+  }
+
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
