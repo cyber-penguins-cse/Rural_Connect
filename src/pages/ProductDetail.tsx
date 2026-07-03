@@ -129,7 +129,7 @@ export default function ProductDetail() {
             </div>
           )}
 
-          <div className="text-3xl font-bold text-gray-900 mb-6">₹{Number(product.price).toLocaleString('en-IN')}</div>
+          <div className="text-3xl font-bold text-gray-900 mb-6">Rs.{Number(product.price).toLocaleString('en-IN')}</div>
 
           <p className="text-gray-600 leading-relaxed mb-6">{product.description}</p>
 
