@@ -64,7 +64,7 @@ export default function AddProduct() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Price (₹) *</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Price (Rs.) *</label>
               <input type="number" value={form.price} onChange={(e) => set('price', e.target.value)} required min="1" step="0.01" className="w-full px-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="0.00" />
             </div>
             <div>
