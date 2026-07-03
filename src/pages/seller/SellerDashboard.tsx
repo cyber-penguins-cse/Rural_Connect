@@ -116,7 +116,7 @@ export default function SellerDashboard() {
                   <span className="font-semibold text-gray-900 text-sm truncate">{p.title}</span>
                   <StatusBadge status={p.status} />
                 </div>
-                <div className="text-sm text-green-700 font-semibold mt-0.5">₹{Number(p.price).toLocaleString('en-IN')}</div>
+                <div className="text-sm text-green-700 font-semibold mt-0.5">Rs.{Number(p.price).toLocaleString('en-IN')}</div>
                 {p.category && <div className="text-xs text-stone-400 mt-0.5">{p.category.name}</div>}
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
