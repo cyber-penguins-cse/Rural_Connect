@@ -108,7 +108,7 @@ export default function AdminDashboard() {
                   <StatusBadge status={p.status} />
                 </div>
                 <div className="text-xs text-gray-500 mb-1">By {(p as unknown as { seller: { full_name: string } }).seller?.full_name}</div>
-                <div className="text-sm font-semibold text-green-700">₹{Number(p.price).toLocaleString('en-IN')}</div>
+                <div className="text-sm font-semibold text-green-700">Rs.{Number(p.price).toLocaleString('en-IN')}</div>
                 <p className="text-xs text-gray-500 mt-1 line-clamp-2">{p.description}</p>
               </div>
               <div className="flex flex-col gap-2 flex-shrink-0">
