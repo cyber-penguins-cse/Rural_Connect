@@ -17,3 +17,6 @@ RuralConnect is a digital marketplace platform that connects rural producers, fa
 ## Purpose
 
 The aim of this project is to support rural communities by providing a digital marketplace for products and services.
+
+##🚀 Live Demo:
+- https://rurel-connect.netlify.app/
