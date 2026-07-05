@@ -124,12 +124,27 @@ Supabase Database
 
 ## 📸 Screenshots
 
-> Add screenshots of:
-- Home Page
-- Marketplace
-- Product Details
-- Login / Registration
-- Responsive Mobile View
+### Home Page
+
+![Home Page](screenshots/homepage.jpeg)
+
+### Marketplace
+
+![Marketplace](screenshots/marketplace.jpeg)
+
+### Login Page
+
+![Login](screenshots/login.png)
+
+### Admin Page
+
+![Admin](screenshots/Admin-page.jpeg)
+
+
+### Product Details
+
+![Product Details](screenshots/ProductDetails.png)
+
 
 ---
 
@@ -161,28 +176,6 @@ Team Members
 ## 📄 License
 
 This project was developed for educational purposes.
-## 📸 Screenshots
-
-### Home Page
-
-![Home Page](screenshots/homepage.png)
-
-### Marketplace
-
-![Marketplace](screenshots/marketplace.png)
-
-### Login Page
-
-![Login](screenshots/login.png)
-
-### Admin Page
-
-![Admin](screenshots/Admin-page.png)
-
-
-### Product Details
-
-![Product Details](screenshots/ProductDetails.png)
 
 ## 🎥 Project Demo
 
