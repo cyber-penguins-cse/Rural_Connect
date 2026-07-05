@@ -8,6 +8,9 @@
 
 🔗 https://rurel-connect.netlify.app/
 
+## 🎥 Project Demo
+
+[Watch Demo Video on Google Drive](https://drive.google.com/drive/folders/1e6qtAbn4djYKdyW6iju1ACw22j5Q9tCo)
 ---
 
 ## 📖 Project Overview
@@ -177,7 +180,5 @@ Team Members
 
 This project was developed for educational purposes.
 
-## 🎥 Project Demo
 
-[Watch Demo Video on Google Drive](https://drive.google.com/drive/folders/1e6qtAbn4djYKdyW6iju1ACw22j5Q9tCo)
 
